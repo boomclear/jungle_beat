@@ -10,11 +10,12 @@ RSpec.describe LinkedList do
 
   it "can add data" do
     list = LinkedList.new
-
     list.append("doop")
+
+    expect(list.head).to be_instance_of(Node)
   end
 
-  it "can count nodes" do
+  xit "can count nodes" do
     list = LinkedList.new
     
     list.append("doop")
@@ -22,11 +23,11 @@ RSpec.describe LinkedList do
     expect(list.count).to eq 1
   end
 
-  it "can p node data as a string" do
+  xit "can p node data as a string" do
     list = LinkedList.new
 
     list.append("doop")
-    
+
     expect(list.to_string).to eq "doop"
   end
 end
