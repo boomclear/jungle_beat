@@ -20,10 +20,14 @@ class LinkedList
   end
 
   def count
-    if @head.nil?
-      0
-    else
-      1
+    node = @head
+    return 0 if node.nil?
+    count = 1
+    while node.next_node != nil
+      count += 1
+      node = node.next_node
+    end
+    count
   end
 
 end
