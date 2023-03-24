@@ -15,7 +15,7 @@ RSpec.describe LinkedList do
     expect(list.head).to be_instance_of(Node)
   end
 
-  xit "can count nodes" do
+  it "can count 1 node" do
     list = LinkedList.new
     
     list.append("doop")
@@ -23,21 +23,23 @@ RSpec.describe LinkedList do
     expect(list.count).to eq 1
   end
 
-  xit "can p node data as a string" do
+  it "can count multiple nodes" do
+    list = LinkedList.new
+    
+    list.append("doop")
+    list.append("deep")
+    list.append("dork")
+
+    expect(list.count).to eq 3
+  end
+
+  it "can p node data as a string" do
     list = LinkedList.new
 
     list.append("doop")
+    list.append("doop")
 
-    expect(list.to_string).to eq "doop"
+    expect(list.to_string).to eq "doop doop"
   end
 end
 
-#  list = LinkedList.new
-#  <LinkedList head=nil #4567890456 list.head
-#  nil list.append("doop")
-#  "doop" list
-#  <LinkedList head=<Node data="doop" next_node=nil #567890456789 #4567890456 
-#  list.head.next_node
-#  nil list.count
-#  1 list.to_string
-#  "doop"

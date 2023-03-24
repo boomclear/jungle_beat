@@ -30,4 +30,22 @@ class LinkedList
     count
   end
 
+  def to_string
+    arr = []
+    node = @head
+    while node != nil
+      arr << node.data
+      node = node.next_node
+    end
+    arr.join(' ')
+  end
+
+  def prepend(data)
+    old_head = @head
+    @head = Node.new(data)
+    @head.next_node = old_head
+  end
+
+  def insert(pos, data)
+
 end
