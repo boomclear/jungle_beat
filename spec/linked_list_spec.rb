@@ -88,5 +88,16 @@ RSpec.describe LinkedList do
 
     expect(list.find(1, 2)).to eq("doop boop")
   end
+
+  it 'can see if data is included' do
+    list = LinkedList.new
+
+    list.append("deep")
+    list.append("doop")
+    list.append("meep")
+    expect(list.includes?("deep")).to eq(true)
+    expect(list.includes?("dep")).to eq(false)
+    expect(list.includes?("deep doop")).to eq(true)
+  end
 end
 

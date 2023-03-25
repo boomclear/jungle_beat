@@ -84,4 +84,12 @@ class LinkedList
     b.join(' ')
   end
 
+  def includes?(data)
+    if self.to_string.include?(data)
+      true
+    else
+      false
+    end
+  end
+
 end
