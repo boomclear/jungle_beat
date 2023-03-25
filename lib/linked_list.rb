@@ -47,5 +47,41 @@ class LinkedList
   end
 
   def insert(pos, data)
+    if self.count <= pos
+      self.append(data)
+    elsif -(self.count) >= pos
+      self.prepend(data)
+    else
+      node = @head
+      last_node = nil
+      (0...pos).each do
+        last_node = node
+        node = node.next_node
+      end
+      last_node.next_node = Node.new(data)
+      last_node.next_node.next_node = node
+    end
+  end
+
+  def to_array
+    a = []
+    node = @head
+    while node != nil
+      a << node.data
+      node = node.next_node
+    end
+    a
+  end
+
+  def find(pos, qty)
+    a = self.to_array
+    b = []
+    return "bad position, try again" if a[pos].nil?
+    return "bad quantity, try again" if qty > self.count || qty <  0
+    (pos...(pos+qty)).each do |i|
+      b << a[i]
+    end
+    b.join(' ')
+  end
 
 end
