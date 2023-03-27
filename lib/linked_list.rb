@@ -92,4 +92,23 @@ class LinkedList
     end
   end
 
+  def pop 
+    node = @head
+    last_node = nil
+    if node.nil?
+      nil
+    elsif node.next_node.nil?
+      data = node.data
+      @head = nil
+      data
+    else
+      until node.next_node.nil?
+        last_node = node
+        node = node.next_node
+      end
+      last_node.next_node = nil
+      node.data
+    end
+  end
+
 end

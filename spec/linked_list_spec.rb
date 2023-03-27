@@ -99,5 +99,15 @@ RSpec.describe LinkedList do
     expect(list.includes?("dep")).to eq(false)
     expect(list.includes?("deep doop")).to eq(true)
   end
+
+  it 'can pop' do
+    list = LinkedList.new
+
+    expect(list.pop).to eq(nil)
+
+    list.append("Deep")
+    expect(list.pop).to eq("Deep")
+    expect(list.head).to eq(nil)
+  end
 end
 
